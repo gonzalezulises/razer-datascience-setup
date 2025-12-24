@@ -1,0 +1,16 @@
+# Fail2ban Configuration
+# Copy to: /etc/fail2ban/jail.local
+# Then restart: sudo systemctl restart fail2ban
+
+[DEFAULT]
+bantime = 1h
+findtime = 10m
+maxretry = 5
+banaction = ufw
+
+[sshd]
+enabled = true
+port = ssh
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 3
