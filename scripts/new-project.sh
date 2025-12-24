@@ -1,7 +1,11 @@
 #!/bin/bash
 # Create a new data science project
 # Usage: ./new-project.sh project_name [template]
-# Templates: minimal, standard, full
+# Templates: minimal, standard, full, gpu
+
+# Load uv
+export PATH="$HOME/.local/bin:$PATH"
+source "$HOME/.local/bin/env" 2>/dev/null
 
 PROJECT_NAME=${1:-"my-project"}
 TEMPLATE=${2:-"standard"}
